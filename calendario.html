@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário Interativo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      margin: 20px 0;
+    }
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .month {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: white;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .month h2 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+    .day {
+      padding: 10px;
+      background: #eaeaea;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .day:hover {
+      background: #d0d0d0;
+    }
+    .selected {
+      background: #4caf50;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .days {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .day {
+        font-size: 14px;
+        padding: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Calendário Interativo</h1>
+  <div class="calendar">
+    <!-- Lista de meses gerados dinamicamente -->
+  </div>
+
+  <script>
+    const months = [
+      { name: 'Janeiro', days: 31 },
+      { name: 'Fevereiro', days: 28 },
+      { name: 'Março', days: 31 },
+      { name: 'Abril', days: 30 },
+      { name: 'Maio', days: 31 },
+      { name: 'Junho', days: 30 },
+      { name: 'Julho', days: 31 },
+      { name: 'Agosto', days: 31 },
+      { name: 'Setembro', days: 30 },
+      { name: 'Outubro', days: 31 },
+      { name: 'Novembro', days: 30 },
+      { name: 'Dezembro', days: 31 },
+    ];
+
+    const calendar = document.querySelector('.calendar');
+
+    months.forEach(month => {
+      const monthDiv = document.createElement('div');
+      monthDiv.classList.add('month');
+
+      const monthTitle = document.createElement('h2');
+      monthTitle.textContent = month.name;
+      monthDiv.appendChild(monthTitle);
+
+      const daysDiv = document.createElement('div');
+      daysDiv.classList.add('days');
+
+      for (let i = 1; i <= month.days; i++) {
+        const dayDiv = document.createElement('div');
+        dayDiv.classList.add('day');
+        dayDiv.textContent = i;
+
+        dayDiv.addEventListener('click', () => {
+          dayDiv.classList.toggle('selected');
+        });
+
+        daysDiv.appendChild(dayDiv);
+      }
+
+      monthDiv.appendChild(daysDiv);
+      calendar.appendChild(monthDiv);
+    });
+  </script>
+</body>
+</html>
