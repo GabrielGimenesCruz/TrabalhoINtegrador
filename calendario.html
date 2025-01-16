@@ -19,7 +19,7 @@
     }
     .calendar {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
       width: 100%;
       max-width: 1200px;
@@ -43,10 +43,19 @@
       grid-template-columns: repeat(7, 1fr);
       gap: 5px;
     }
-    .day {
+    .weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .day, .weekday {
       padding: 10px;
       background: #eaeaea;
       border-radius: 3px;
+      text-align: center;
+    }
+    .day {
       cursor: pointer;
     }
     .day:hover {
@@ -56,12 +65,15 @@
       background: #4caf50;
       color: white;
     }
-
+    .day.blank {
+      background: transparent;
+      cursor: default;
+    }
     @media (max-width: 600px) {
-      .days {
-        grid-template-columns: repeat(3, 1fr);
+      .days, .weekdays {
+        grid-template-columns: repeat(7, 1fr);
       }
-      .day {
+      .day, .weekday {
         font-size: 14px;
         padding: 5px;
       }
@@ -76,20 +88,21 @@
 
   <script>
     const months = [
-      { name: 'Janeiro', days: 31 },
-      { name: 'Fevereiro', days: 28 },
-      { name: 'Março', days: 31 },
-      { name: 'Abril', days: 30 },
-      { name: 'Maio', days: 31 },
-      { name: 'Junho', days: 30 },
-      { name: 'Julho', days: 31 },
-      { name: 'Agosto', days: 31 },
-      { name: 'Setembro', days: 30 },
-      { name: 'Outubro', days: 31 },
-      { name: 'Novembro', days: 30 },
-      { name: 'Dezembro', days: 31 },
+      { name: 'Janeiro', days: 31, startDay: 0 },
+      { name: 'Fevereiro', days: 28, startDay: 3 },
+      { name: 'Março', days: 31, startDay: 3 },
+      { name: 'Abril', days: 30, startDay: 6 },
+      { name: 'Maio', days: 31, startDay: 1 },
+      { name: 'Junho', days: 30, startDay: 4 },
+      { name: 'Julho', days: 31, startDay: 6 },
+      { name: 'Agosto', days: 31, startDay: 2 },
+      { name: 'Setembro', days: 30, startDay: 5 },
+      { name: 'Outubro', days: 31, startDay: 0 },
+      { name: 'Novembro', days: 30, startDay: 3 },
+      { name: 'Dezembro', days: 31, startDay: 5 },
     ];
 
+    const weekdays = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
     const calendar = document.querySelector('.calendar');
 
     months.forEach(month => {
@@ -100,9 +113,27 @@
       monthTitle.textContent = month.name;
       monthDiv.appendChild(monthTitle);
 
+      const weekdaysDiv = document.createElement('div');
+      weekdaysDiv.classList.add('weekdays');
+      weekdays.forEach(day => {
+        const weekdayDiv = document.createElement('div');
+        weekdayDiv.classList.add('weekday');
+        weekdayDiv.textContent = day;
+        weekdaysDiv.appendChild(weekdayDiv);
+      });
+      monthDiv.appendChild(weekdaysDiv);
+
       const daysDiv = document.createElement('div');
       daysDiv.classList.add('days');
 
+      // Adiciona dias em branco antes do primeiro dia do mês
+      for (let i = 0; i < month.startDay; i++) {
+        const blankDay = document.createElement('div');
+        blankDay.classList.add('day', 'blank');
+        daysDiv.appendChild(blankDay);
+      }
+
+      // Adiciona os dias do mês
       for (let i = 1; i <= month.days; i++) {
         const dayDiv = document.createElement('div');
         dayDiv.classList.add('day');
