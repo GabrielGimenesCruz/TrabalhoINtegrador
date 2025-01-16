@@ -83,7 +83,7 @@
 <body>
   <h1>Calendário Interativo</h1>
   <div class="calendar">
-    <!-- Lista de meses gerados dinamicamente -->
+    
   </div>
 
   <script>
@@ -126,14 +126,14 @@
       const daysDiv = document.createElement('div');
       daysDiv.classList.add('days');
 
-      // Adiciona dias em branco antes do primeiro dia do mês
+      
       for (let i = 0; i < month.startDay; i++) {
         const blankDay = document.createElement('div');
         blankDay.classList.add('day', 'blank');
         daysDiv.appendChild(blankDay);
       }
 
-      // Adiciona os dias do mês
+   
       for (let i = 1; i <= month.days; i++) {
         const dayDiv = document.createElement('div');
         dayDiv.classList.add('day');
