@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Funcionário</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Estilos do corpo da página */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container do formulário */
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px; /* Aumentado para deixar o formulário mais largo */
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Estilos gerais dos campos do formulário */
+    .form-group {
+      margin-bottom: 20px; /* Aumentado para melhorar o espaçamento */
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 12px; /* Aumentado o padding para campos mais espaçosos */
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 22px; /* Aumentado o padding para o botão */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Estilo para campos obrigatórios */
+    input[required], select[required] {
+      border-color: #ff4d4d;
+    }
+
+    input[readonly] {
+      background-color: #f0f0f0;
+      cursor: not-allowed;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de Funcionário</h1>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" readonly value="12345">
+      </div>
+      <div class="form-group">
+        <label for="nome">*Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco">
+      </div>
+      <div class="form-group">
+        <label for="dataNascimento">*Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" required>
+      </div>
+      <div class="form-group">
+        <label for="telefone">*Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+      </div>
+      <div class="form-group">
+        <label for="cargo">*Cargo:</label>
+        <input type="text" id="cargo" name="cargo" required>
+      </div>
+      <div class="form-group">
+        <label for="dataAdmissao">*Data de Admissão:</label>
+        <input type="date" id="dataAdmissao" name="dataAdmissao" required>
+      </div>
+      <div class="form-group">
+        <label for="dataDemissao">Data de Demissão:</label>
+        <input type="date" id="dataDemissao" name="dataDemissao">
+      </div>
+      <div class="form-group">
+        <label for="salario">*Salário:</label>
+        <input type="number" id="salario" name="salario" required>
+      </div>
+      <div class="form-group">
+        <label for="status">*Status:</label>
+        <select id="status" name="status" required>
+          <option value="ativo">Ativo</option>
+          <option value="inativo">Inativo</option>
+        </select>
+      </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+</body>
+</html>
