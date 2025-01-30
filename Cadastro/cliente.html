@@ -3,6 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Lateral Estilizado</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Oculto inicialmente */
+            width: 250px;
+            height: 100%;
+            background: linear-gradient(45deg, #34495e, #2c3e50);
+            color: white;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px 20px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #1abc9c;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .sidebar ul li i {
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            width: 100%;
+        }
+
+        .submenu {
+            display: none; /* Oculto inicialmente */
+            padding-left: 20px;
+        }
+
+        .submenu li {
+            padding: 10px 0;
+        }
+
+        .submenu li a {
+            font-size: 14px;
+            color: #ecf0f1;
+        }
+
+        .submenu li a:hover {
+            color: #1abc9c;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .main {
+            margin-left: 0;
+            padding: 16px;
+            transition: margin-left 0.3s;
+        }
+
+        .menu-btn {
+            position: fixed;
+            top: 20px; /* Ajuste conforme necessário */
+            left: 20px;
+            z-index: 1000;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease;
+        }
+
+
+
+        .menu-btn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeBtn">✖</button>
+        <h2>Menu</h2>
+        <ul>
+            <li id="cadastrosBtn"><i class="fas fa-users"></i> Cadastros</li>
+            <ul class="submenu" id="cadastrosSubmenu">
+                <li><a href="">Cliente</a></li>
+                <li><a href="funcionario.html">Funcionário</a></li>
+                <li><a href="Cadastro/grupodeservico.html">Grupo de Serviço</a></li>
+                <li><a href="Cadastro/serviço.html">Serviço</a></li>
+                
+            </ul>
+            <li id="movimentacoesBtn"><i class="fas fa-exchange-alt"></i> Movimentações</li>
+            <ul class="submenu" id="movimentacoesSubmenu">
+                <li><a href="Movimentacoes/ordemdeservico.html">Ordem de Serviço</a></li>
+            </ul>
+            <li id="relatoriosBtn"><i class="fas fa-chart-line"></i> Relatórios</li>
+            <ul class="submenu" id="relatoriosSubmenu">
+                <li><a href="/relatorio-servicos.html">Relatório de Serviços</a></li>
+                <li><a href="/relatorio-clientes.html">Relatório de Clientes</a></li>
+            </ul>
+            <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <button class="menu-btn" id="menuBtn">☰</button>
+        
+    </div>
+
+    <script>
+        // Abrir o menu lateral
+        document.getElementById("menuBtn").addEventListener("click", function() {
+            document.getElementById("sidebar").style.left = "0";
+        });
+
+        // Fechar o menu lateral
+        document.getElementById("closeBtn").addEventListener("click", function() {
+            document.getElementById("sidebar").style.left = "-250px";
+        });
+
+        // Expandir e recolher o submenu de "Cadastros"
+        document.getElementById("cadastrosBtn").addEventListener("click", function() {
+            const submenu = document.getElementById("cadastrosSubmenu");
+            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        });
+
+        // Expandir e recolher o submenu de "Movimentações"
+        document.getElementById("movimentacoesBtn").addEventListener("click", function() {
+            const submenu = document.getElementById("movimentacoesSubmenu");
+            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        });
+
+        // Expandir e recolher o submenu de "Relatórios"
+        document.getElementById("relatoriosBtn").addEventListener("click", function() {
+            const submenu = document.getElementById("relatoriosSubmenu");
+            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        });
+
+        document.getElementById("menuBtn").addEventListener("click", function() {
+    document.getElementById("sidebar").style.left = "0";
+    document.getElementById("menuBtn").style.opacity = "0"; // Esconde o botão
+});
+
+document.getElementById("closeBtn").addEventListener("click", function() {
+    document.getElementById("sidebar").style.left = "-250px";
+    setTimeout(() => {
+        document.getElementById("menuBtn").style.opacity = "1"; // Mostra o botão novamente
+    }, 300); // Tempo igual ao da transição do menu
+});
+
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Cliente</title>
     <style>
         * {
