@@ -98,6 +98,10 @@
             padding: 16px;
             transition: margin-left 0.3s;
         }
+        .menu-btn.hidden {
+            display: none;
+        }
+
 
         .menu-btn {
             font-size: 20px;
@@ -109,6 +113,21 @@
             border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
+        .menu-btn {
+            position: fixed; 
+            top: 10px; 
+            left: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -131,8 +150,10 @@
             </ul>
             <li id="relatoriosBtn"><i class="fas fa-chart-line"></i> Relatórios</li>
             <ul class="submenu" id="relatoriosSubmenu">
-                <li><a href="/relatorio-servicos.html">Relatório de Serviços</a></li>
-                <li><a href="/relatorio-clientes.html">Relatório de Clientes</a></li>
+                <li><a href="../Relatorios/RelatorioCliente.html">Relatório de Clientes</a></li>
+                <li><a href="../Relatorios/RelatorioOS.html">Relatório de Ordem de serviço</a></li>
+                <li><a href="../Relatorios/RelatorioServico.html">Relatório de Serviços</a></li>
+            </ul>
             </ul>
             <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
         </ul>
@@ -140,8 +161,177 @@
 
     <div class="main">
         <button class="menu-btn" id="menuBtn">☰</button>
-        <h1>Bem-vindo</h1>
-        <p>Esta é a área principal.</p>
+        <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Serviços - Serralheria</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, input, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Serviços</h1>
+        <form id="serviceForm">
+            <div>
+                <label for="clientName">Nome do Cliente:</label>
+                <input type="text" id="clientName" placeholder="Digite o nome do cliente" required>
+            </div>
+            <div>
+                <label for="clientLocation">Localização:</label>
+                <input type="text" id="clientLocation" placeholder="Digite a localização do cliente" required>
+            </div>
+            <div>
+                <label for="serviceName">Nome do Serviço:</label>
+                <select id="serviceName" required>
+                    <option value="">Selecione um serviço</option>
+                    <option value="Portão de Alumínio">Portão de Alumínio</option>
+                    <option value="Estrutura Metálica">Estrutura Metálica</option>
+                    <option value="Manutenção de Portão">Manutenção de Portão</option>
+                </select>
+            </div>
+            <div>
+                <label for="serviceDate">Data:</label>
+                <input type="date" id="serviceDate" required>
+            </div>
+            <div>
+                <label for="serviceTime">Hora:</label>
+                <input type="time" id="serviceTime" required>
+            </div>
+            <button type="submit">Cadastrar Serviço</button>
+        </form>
+
+        <table id="serviceTable">
+            <thead>
+                <tr>
+                    <th>Nome do Cliente</th>
+                    <th>Localização</th>
+                    <th>Nome do Serviço</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João Silva</td>
+                    <td>Rua das Flores, 123</td>
+                    <td>Portão de Alumínio</td>
+                    <td>2025-02-10</td>
+                    <td>09:00</td>
+                </tr>
+                <tr>
+                    <td>Maria Oliveira</td>
+                    <td>Avenida Central, 456</td>
+                    <td>Estrutura Metálica</td>
+                    <td>2025-02-11</td>
+                    <td>14:30</td>
+                </tr>
+                <tr>
+                    <td>Carlos Pereira</td>
+                    <td>Praça das Árvores, 789</td>
+                    <td>Manutenção de Portão</td>
+                    <td>2025-02-12</td>
+                    <td>11:00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const form = document.getElementById('serviceForm');
+        const tableBody = document.querySelector('#serviceTable tbody');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const clientName = document.getElementById('clientName').value;
+            const clientLocation = document.getElementById('clientLocation').value;
+            const serviceName = document.getElementById('serviceName').value;
+            const serviceDate = document.getElementById('serviceDate').value;
+            const serviceTime = document.getElementById('serviceTime').value;
+
+            if (serviceName === "") {
+                alert("Por favor, selecione um serviço.");
+                return;
+            }
+
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${clientName}</td>
+                <td>${clientLocation}</td>
+                <td>${serviceName}</td>
+                <td>${serviceDate}</td>
+                <td>${serviceTime}</td>
+            `;
+            tableBody.appendChild(newRow);
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>
+
     </div>
 
     <script>
@@ -172,6 +362,21 @@
             const submenu = document.getElementById("relatoriosSubmenu");
             submenu.style.display = submenu.style.display === "block" ? "none" : "block";
         });
+
+            const menuBtn = document.getElementById("menuBtn");
+            const sidebar = document.getElementById("sidebar");
+
+        menuBtn.addEventListener("click", function() {
+        sidebar.style.left = "0";
+         menuBtn.classList.add("hidden"); // Esconde o botão quando o menu é aberto
+});
+
+        document.getElementById("closeBtn").addEventListener("click", function() {
+        sidebar.style.left = "-250px";
+        menuBtn.classList.remove("hidden"); // Mostra o botão quando o menu é fechado
+});
+
     </script>
 </body>
 </html>
+
