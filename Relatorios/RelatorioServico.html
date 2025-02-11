@@ -207,3 +207,130 @@ document.getElementById("closeBtn").addEventListener("click", function() {
     </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório de Serviços</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .button-group {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button.cancel {
+      background-color: #ccc;
+      color: #333;
+    }
+    button.generate {
+      background-color: #007BFF;
+      color: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Relatório de Serviços</h1>
+    <form>
+      <div class="form-group">
+        <label for="service-name">Nome do Serviço:</label>
+        <input type="text" id="service-name" placeholder="Digite o nome do serviço">
+        
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Descrição do Serviço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Instalação de Portão</td>
+            <td>Serviço completo de instalação de portões automáticos.</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Manutenção de Estruturas</td>
+            <td>Reparo e reforço de estruturas metálicas.</td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Soldagem Personalizada</td>
+            <td>Serviço de soldagem para projetos personalizados.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="button-group">
+        <button type="button" class="cancel">Cancelar</button>
+        <button type="submit" class="generate">Pesquisar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -138,8 +138,8 @@
             <li id="cadastrosBtn"><i class="fas fa-users"></i> Cadastros</li>
             <ul class="submenu" id="cadastrosSubmenu">
                 <li><a href="">Cliente</a></li>
-                <li><a href="funcionario.html">Funcionário</a></li>
-                <li><a href="grupodeservico.html">Grupo de Serviço</a></li>
+                <li><a href="../funcionario.html">Funcionário</a></li>
+                <li><a href="../grupodeservico.html">Grupo de Serviço</a></li>
                 <li><a href="serviço.html">Serviço</a></li>
                 
             </ul>
@@ -205,5 +205,136 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 });
 
     </script>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório de Ordens de Serviço</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-group input[type="date"] {
+      max-width: 200px;
+    }
+    .form-group button {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table th, table td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    table th {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Relatório de Ordens de Serviço</h1>
+    <div class="form-group">
+      <label for="data-os">Filtrar por Data da OS:</label>
+      <input type="date" id="data-os">
+    </div>
+    <div class="form-group">
+      <button onclick="buscarRelatorio()">Buscar Relatório</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>ID do Cliente</th>
+          <th>ID do Funcionário</th>
+          <th>Data OS</th>
+          <th>Valor Total</th>
+          <th>ID do Serviço</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-relatorio">
+        <tr>
+          <td>001</td>
+          <td>1</td>
+          <td>101</td>
+          <td>2025-02-10</td>
+          <td>R$ 1.500,00</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>2</td>
+          <td>102</td>
+          <td>2025-02-11</td>
+          <td>R$ 2.300,00</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>3</td>
+          <td>103</td>
+          <td>2025-02-12</td>
+          <td>R$ 900,00</td>
+          <td>12</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function buscarRelatorio() {
+      alert('Buscar relatório por Data da OS! Aqui você pode adicionar sua lógica para filtrar os dados.');
+    }
+  </script>
 </body>
 </html>
