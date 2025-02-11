@@ -14,7 +14,7 @@
         .sidebar {
             position: fixed;
             top: 0;
-            left: -250px; /* Oculto inicialmente */
+            left: -250px; 
             width: 250px;
             height: 100%;
             background: linear-gradient(45deg, #34495e, #2c3e50);
@@ -47,7 +47,7 @@
         }
 
         .sidebar ul li:hover {
-            background-color: #1abc9c;
+            background-color: #007BFF;
             color: white;
             border-radius: 4px;
         }
@@ -79,7 +79,7 @@
         }
 
         .submenu li a:hover {
-            color: #1abc9c;
+            color: #007BFF;
         }
 
         .close-btn {
@@ -101,12 +101,12 @@
 
         .menu-btn {
             position: fixed;
-            top: 20px; /* Ajuste conforme necessário */
+            top: 20px; 
             left: 20px;
             z-index: 1000;
             font-size: 20px;
             cursor: pointer;
-            background-color: #1abc9c;
+            background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -120,7 +120,7 @@
         .menu-btn {
             font-size: 20px;
             cursor: pointer;
-            background-color: #1abc9c;
+            background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -241,7 +241,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
         h2 {
             text-align: center;
-            color: #4CAF50;
+            color: #007BFF;
             margin-bottom: 20px;
         }
 
@@ -265,14 +265,14 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
         input:focus,
         select:focus {
-            border-color: #4CAF50;
+            border-color: #007BFF;
             outline: none;
         }
 
         .btn {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #007BFF;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -281,7 +281,11 @@ document.getElementById("closeBtn").addEventListener("click", function() {
         }
 
         .btn:hover {
-            background-color: #45a049;
+            background-color: #007BFF;
+        }
+        .required::after {
+            content: " *";
+            color: red;
         }
     </style>
 </head>
@@ -294,15 +298,15 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                 <input type="text" id="codigo" name="codigo" placeholder="Gerado automaticamente" disabled>
             </div>
             <div class="form-group">
-                <label for="nome">Nome *</label>
+                <label for="nome"class="required">Nome</label>
                 <input type="text" id="nome" name="nome" placeholder="Digite o nome do grupo" required>
             </div>
             <div class="form-group">
-                <label for="descricao">Descrição *</label>
+                <label for="descricao"class="required">Descrição</label>
                 <input type="text" id="descricao" name="descricao" placeholder="Digite a descrição" required>
             </div>
             <div class="form-group">
-                <label for="status">Status *</label>
+                <label for="status"class="required">Status</label>
                 <select id="status" name="status" required>
                     <option value="">Selecione</option>
                     <option value="Ativo">Ativo</option>

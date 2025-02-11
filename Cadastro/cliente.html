@@ -14,7 +14,7 @@
         .sidebar {
             position: fixed;
             top: 0;
-            left: -250px; /* Oculto inicialmente */
+            left: -250px; 
             width: 250px;
             height: 100%;
             background: linear-gradient(45deg, #34495e, #2c3e50);
@@ -47,7 +47,7 @@
         }
 
         .sidebar ul li:hover {
-            background-color: #1abc9c;
+            background-color: #007BFF;
             color: white;
             border-radius: 4px;
         }
@@ -79,7 +79,7 @@
         }
 
         .submenu li a:hover {
-            color: #1abc9c;
+            color: #1a5bbc;
         }
 
         .close-btn {
@@ -101,12 +101,12 @@
 
         .menu-btn {
             position: fixed;
-            top: 20px; /* Ajuste conforme necessário */
+            top: 20px; 
             left: 20px;
             z-index: 1000;
             font-size: 20px;
             cursor: pointer;
-            background-color: #1abc9c;
+            background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -120,7 +120,7 @@
         .menu-btn {
             font-size: 20px;
             cursor: pointer;
-            background-color: #1abc9c;
+            background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -240,7 +240,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
         h2 {
             text-align: center;
-            color: #4CAF50;
+            color: #007BFF;
             margin-bottom: 20px;
         }
 
@@ -264,14 +264,14 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
         input:focus,
         select:focus {
-            border-color: #4CAF50;
+            border-color: #007BFF;
             outline: none;
         }
 
         .btn {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #007BFF;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -280,7 +280,12 @@ document.getElementById("closeBtn").addEventListener("click", function() {
         }
 
         .btn:hover {
-            background-color: #45a049;
+            background-color: #007BFF;
+        }
+
+        .required::after {
+            content: " *";
+            color: red;
         }
     </style>
 </head>
@@ -293,19 +298,19 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                 <input type="text" id="codigo" name="codigo" placeholder="Gerado automaticamente" disabled>
             </div>
             <div class="form-group">
-                <label for="nome">Nome *</label>
+                <label for="nome" class="required">Nome </label>
                 <input type="text" id="nome" name="nome" placeholder="Digite o nome do cliente" required>
             </div>
             <div class="form-group">
-                <label for="rg">RG *</label>
+                <label for="rg"class="required">RG </label>
                 <input type="text" id="rg" name="rg" placeholder="Digite o RG do cliente" required>
             </div>
             <div class="form-group">
-                <label for="cpf">CPF *</label>
+                <label for="cpf"class="required">CPF </label>
                 <input type="text" id="cpf" name="cpf" placeholder="Digite o CPF do cliente" required>
             </div>
             <div class="form-group">
-                <label for="telefone">Telefone *</label>
+                <label for="telefone"class="required">Telefone </label>
                 <input type="tel" id="telefone" name="telefone" placeholder="Digite o telefone do cliente" required>
             </div>
             <div class="form-group">
@@ -313,15 +318,15 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                 <input type="email" id="email" name="email" placeholder="Digite o e-mail do cliente">
             </div>
             <div class="form-group">
-                <label for="endereco">Endereço *</label>
+                <label for="endereco"class="required">Endereço </label>
                 <input type="text" id="endereco" name="endereco" placeholder="Digite o endereço do cliente" required>
             </div>
             <div class="form-group">
-                <label for="cidade">Cidade *</label>
+                <label for="cidade"class="required">Cidade </label>
                 <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade" required>
             </div>
             <div class="form-group">
-                <label for="uf">UF *</label>
+                <label for="uf"class="required">UF </label>
                 <select id="uf" name="uf" required>
                     <option value="">Selecione</option>
                     <option value="SP">SP</option>
@@ -330,11 +335,11 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                 </select>
             </div>
             <div class="form-group">
-                <label for="cep">CEP *</label>
+                <label for="cep"class="required">CEP </label>
                 <input type="text" id="cep" name="cep" placeholder="Digite o CEP" required>
             </div>
             <div class="form-group">
-                <label for="numeroCasa">Número da Casa *</label>
+                <label for="numeroCasa"class="required">Número da Casa </label>
                 <input type="text" id="numeroCasa" name="numeroCasa" placeholder="Digite o número da casa" required>
             </div>
             <button type="submit" class="btn">Cadastrar</button>

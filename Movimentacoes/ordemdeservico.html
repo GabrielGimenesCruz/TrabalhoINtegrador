@@ -14,7 +14,7 @@
         .sidebar {
             position: fixed;
             top: 0;
-            left: -250px; /* Oculto inicialmente */
+            left: -250px; 
             width: 250px;
             height: 100%;
             background: linear-gradient(45deg, #34495e, #2c3e50);
@@ -47,7 +47,7 @@
         }
 
         .sidebar ul li:hover {
-            background-color: #1abc9c;
+            background-color: #007BFF;
             color: white;
             border-radius: 4px;
         }
@@ -65,7 +65,7 @@
         }
 
         .submenu {
-            display: none; /* Oculto inicialmente */
+            display: none; 
             padding-left: 20px;
         }
 
@@ -79,7 +79,7 @@
         }
 
         .submenu li a:hover {
-            color: #1abc9c;
+            color: #007BFF;
         }
 
         .close-btn {
@@ -101,12 +101,12 @@
 
         .menu-btn {
             position: fixed;
-            top: 20px; /* Ajuste conforme necessário */
+            top: 20px; 
             left: 20px;
             z-index: 1000;
             font-size: 20px;
             cursor: pointer;
-            background-color: #1abc9c;
+            background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -120,7 +120,7 @@
         .menu-btn {
             font-size: 20px;
             cursor: pointer;
-            background-color: #1abc9c;
+            background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -244,7 +244,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
         h2 {
             text-align: center;
-            color: #4CAF50;
+            color: #007BFF;
             margin-bottom: 20px;
         }
 
@@ -268,14 +268,14 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
         input:focus,
         select:focus {
-            border-color: #4CAF50;
+            border-color: #007BFF;
             outline: none;
         }
 
         .btn {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #007BFF;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -284,7 +284,11 @@ document.getElementById("closeBtn").addEventListener("click", function() {
         }
 
         .btn:hover {
-            background-color: #45a049;
+            background-color: #007BFF;
+        }
+        .required::after {
+            content: " *";
+            color: red;
         }
     </style>
 </head>
@@ -312,6 +316,15 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                     <option value="2">Funcionário 2</option>
                 </select>
             </div>
+            
+            <div class="form-group">
+                <label for="idServico">ID do Serviço</label>
+                <select id="idServico" name="idServico" class="select2">
+                    <option value="">Selecione um serviço</option>
+                    <option value="1">Serviço 1</option>
+                    <option value="2">Serviço 2</option>
+                </select>
+            </div>
             <div class="form-group">
                 <label for="dataOS">Data OS *</label>
                 <input type="date" id="dataOS" name="dataOS" required>
@@ -334,15 +347,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                     <option value="Cancelado">Cancelado</option>
                 </select>
             </div>
-            <h3>Itens da OS</h3>
-            <div class="form-group">
-                <label for="idServico">ID do Serviço</label>
-                <select id="idServico" name="idServico" class="select2">
-                    <option value="">Selecione um serviço</option>
-                    <option value="1">Serviço 1</option>
-                    <option value="2">Serviço 2</option>
-                </select>
-            </div>
+            
             <div class="form-group">
                 <label for="qtdeMateria">Quantidade de Matéria Prima Utilizada</label>
                 <input type="text" id="qtdeMateria" name="qtdeMateria" placeholder="Digite a quantidade">
