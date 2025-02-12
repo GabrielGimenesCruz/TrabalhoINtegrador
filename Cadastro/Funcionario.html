@@ -14,7 +14,7 @@
         .sidebar {
             position: fixed;
             top: 0;
-            left: -250px; /* Oculto inicialmente */
+            left: -250px; 
             width: 250px;
             height: 100%;
             background: linear-gradient(45deg, #34495e, #2c3e50);
@@ -137,10 +137,10 @@
         <ul>
             <li id="cadastrosBtn"><i class="fas fa-users"></i> Cadastros</li>
             <ul class="submenu" id="cadastrosSubmenu">
-                <li><a href="cliente.html">Cliente</a></li>
-                <li><a href="funcionario.html">Funcionário</a></li>
-                <li><a href="grupodeservico.html">Grupo de Serviço</a></li>
-                <li><a href="serviço.html">Serviço</a></li>
+                <li><a href="../cadastro/cliente.html">Cliente</a></li>
+                <li><a href="../cadastro/funcionario.html">Funcionário</a></li>
+                <li><a href="../cadastro/grupodeservico.html">Grupo de Serviço</a></li>
+                <li><a href="../cadastro/serviço.html">Serviço</a></li>
                 
             </ul>
             <li id="movimentacoesBtn"><i class="fas fa-exchange-alt"></i> Movimentações</li>
@@ -149,13 +149,11 @@
             </ul>
             <li id="relatoriosBtn"><i class="fas fa-chart-line"></i> Relatórios</li>
             <ul class="submenu" id="relatoriosSubmenu">
-                <ul class="submenu" id="relatoriosSubmenu">
-                    <li><a href="../Relatorios/RelatorioCliente.html">Relatório de Clientes</a></li>
-                    <li><a href="../Relatorios/RelatorioOS.html">Relatório de Ordem de serviço</a></li>
-                    <li><a href="../Relatorios/RelatorioServico.html">Relatório de Serviços</a></li>
-                </ul>
+                <li><a href="../Relatorios/RelatorioCliente.html">Relatório de Clientes</a></li>
+                <li><a href="../Relatorios/RelatorioOS.html">Relatório de Ordem de serviço</a></li>
+                <li><a href="../Relatorios/RelatorioServico.html">Relatório de Serviços</a></li>
             </ul>
-            <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+            </ul>
         </ul>
     </div>
 
@@ -242,7 +240,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
         h2 {
             text-align: center;
-            color: #007BFF;
+            color: #333;
             margin-bottom: 20px;
         }
 

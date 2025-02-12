@@ -244,7 +244,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
         h2 {
             text-align: center;
-            color: #007BFF;
+            color: #333;
             margin-bottom: 20px;
         }
 
@@ -304,16 +304,18 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                 <label for="idCliente">ID do Cliente</label>
                 <select id="idCliente" name="idCliente" class="select2">
                     <option value="">Selecione um cliente</option>
-                    <option value="1">Cliente 1</option>
-                    <option value="2">Cliente 2</option>
+                    <option value="1">001 - João Silva</option>
+                    <option value="2">002 - Maria Oliveira</option>
+                    <option value="3">003 - Carlos Pereiraa</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="idFuncionario">ID do Funcionário</label>
                 <select id="idFuncionario" name="idFuncionario" class="select2">
                     <option value="">Selecione um funcionário</option>
-                    <option value="1">Funcionário 1</option>
-                    <option value="2">Funcionário 2</option>
+                    <option value="1">001 - Marcos Roberto</option>
+                    <option value="2">002 - Henry Matos</option>
+                    <option value="3">003 - Luiz Gabriel</option>
                 </select>
             </div>
             
@@ -321,8 +323,9 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                 <label for="idServico">ID do Serviço</label>
                 <select id="idServico" name="idServico" class="select2">
                     <option value="">Selecione um serviço</option>
-                    <option value="1">Serviço 1</option>
-                    <option value="2">Serviço 2</option>
+                    <option value="1">001 - Portão de alumínio</option>
+                    <option value="2">002 - Estrutura metálica</option>
+                    <option value="3">003 - Manutenção de portão</option>
                 </select>
             </div>
             <div class="form-group">
@@ -337,6 +340,12 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                 <label for="valorTotal">Valor Total *</label>
                 <input type="text" id="valorTotal" name="valorTotal" placeholder="Digite o valor total" required>
             </div>
+            
+            
+            <div class="form-group">
+                <label for="qtdeMateria">Quantidade de Matéria Prima Utilizada</label>
+                <input type="text" id="qtdeMateria" name="qtdeMateria" placeholder="Digite a quantidade">
+            </div>
             <div class="form-group">
                 <label for="status">Status *</label>
                 <select id="status" name="status" required>
@@ -346,11 +355,6 @@ document.getElementById("closeBtn").addEventListener("click", function() {
                     <option value="Concluído">Concluído</option>
                     <option value="Cancelado">Cancelado</option>
                 </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="qtdeMateria">Quantidade de Matéria Prima Utilizada</label>
-                <input type="text" id="qtdeMateria" name="qtdeMateria" placeholder="Digite a quantidade">
             </div>
             <button type="submit" class="btn">Cadastrar</button>
         </form>

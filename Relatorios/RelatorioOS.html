@@ -120,7 +120,7 @@
         .menu-btn {
             font-size: 20px;
             cursor: pointer;
-            background-color: #1abc9c;
+            background-color: #007bff;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -135,26 +135,25 @@
         <button class="close-btn" id="closeBtn">✖</button>
         <h2>Menu</h2>
         <ul>
-            <li id="cadastrosBtn"><i class="fas fa-users"></i> Cadastros</li>
-            <ul class="submenu" id="cadastrosSubmenu">
-                <li><a href="">Cliente</a></li>
-                <li><a href="../Cadastro/funcionario.html">Funcionário</a></li>
-                <li><a href="../Cadastro/grupodeservico.html">Grupo de Serviço</a></li>
-                <li><a href="../Cadastro/serviço.html">Serviço</a></li>
-                
-            </ul>
-            <li id="movimentacoesBtn"><i class="fas fa-exchange-alt"></i> Movimentações</li>
-            <ul class="submenu" id="movimentacoesSubmenu">
-                <li><a href="../Movimentacoes/ordemdeservico.html">Ordem de Serviço</a></li>
-            </ul>
-            <li id="relatoriosBtn"><i class="fas fa-chart-line"></i> Relatórios</li>
-            <ul class="submenu" id="relatoriosSubmenu">
-                <li><a href="../Relatorios/RelatorioCliente.html">Relatório de Clientes</a></li>
-                <li><a href="../Relatorios/RelatorioOS.html">Relatório de Ordem de serviço</a></li>
-                <li><a href="../Relatorios/RelatorioServico.html">Relatório de Serviços</a></li>
-            </ul>
-            </ul>
-            <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+          <li id="cadastrosBtn"><i class="fas fa-users"></i> Cadastros</li>
+          <ul class="submenu" id="cadastrosSubmenu">
+              <li><a href="../cadastro/cliente.html">Cliente</a></li>
+              <li><a href="../cadastro/funcionario.html">Funcionário</a></li>
+              <li><a href="../cadastro/grupodeservico.html">Grupo de Serviço</a></li>
+              <li><a href="../cadastro/serviço.html">Serviço</a></li>
+              
+          </ul>
+          <li id="movimentacoesBtn"><i class="fas fa-exchange-alt"></i> Movimentações</li>
+          <ul class="submenu" id="movimentacoesSubmenu">
+              <li><a href="../Movimentacoes/ordemdeservico.html">Ordem de Serviço</a></li>
+          </ul>
+          <li id="relatoriosBtn"><i class="fas fa-chart-line"></i> Relatórios</li>
+          <ul class="submenu" id="relatoriosSubmenu">
+              <li><a href="../Relatorios/RelatorioCliente.html">Relatório de Clientes</a></li>
+              <li><a href="../Relatorios/RelatorioOS.html">Relatório de Ordem de serviço</a></li>
+              <li><a href="../Relatorios/RelatorioServico.html">Relatório de Serviços</a></li>
+          </ul>
+          </ul>
         </ul>
     </div>
 
@@ -227,7 +226,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
     }
     .container {
       max-width: 1000px;
-      margin: 20px auto;
+      margin: 100px auto;
       background: #fff;
       padding: 20px;
       border-radius: 8px;
@@ -287,10 +286,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
         <label for="codigo-os">Buscar por Código da OS:</label>
         <input type="text" id="codigo-os" placeholder="Digite o código">
       </div>
-      <div>
-        <label for="data-os">Ou Filtrar por Data da OS:</label>
-        <input type="date" id="data-os">
-      </div>
+      
     </div>
     <div class="form-group">
       <button onclick="buscarRelatorio()">Buscar Relatório</button>

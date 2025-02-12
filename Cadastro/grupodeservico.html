@@ -65,7 +65,7 @@
         }
 
         .submenu {
-            display: none; /* Oculto inicialmente */
+            display: none; 
             padding-left: 20px;
         }
 
@@ -137,10 +137,10 @@
         <ul>
             <li id="cadastrosBtn"><i class="fas fa-users"></i> Cadastros</li>
             <ul class="submenu" id="cadastrosSubmenu">
-                <li><a href="cliente.html">Cliente</a></li>
-                <li><a href="funcionario.html">Funcionário</a></li>
-                <li><a href="grupodeservico.html">Grupo de Serviço</a></li>
-                <li><a href="serviço.html">Serviço</a></li>
+                <li><a href="../Cadastro/cliente.html">Cliente</a></li>
+                <li><a href="../Cadastro/funcionario.html">Funcionário</a></li>
+                <li><a href="../Cadastro/grupodeservico.html">Grupo de Serviço</a></li>
+                <li><a href="../Cadastro/serviço.html">Serviço</a></li>
                 
             </ul>
             <li id="movimentacoesBtn"><i class="fas fa-exchange-alt"></i> Movimentações</li>
@@ -154,7 +154,7 @@
                 <li><a href="../Relatorios/RelatorioServico.html">Relatório de Serviços</a></li>
             </ul>
             </ul>
-            <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+            
         </ul>
     </div>
 
@@ -164,29 +164,29 @@
     </div>
 
     <script>
-        // Abrir o menu lateral
+
         document.getElementById("menuBtn").addEventListener("click", function() {
             document.getElementById("sidebar").style.left = "0";
         });
 
-        // Fechar o menu lateral
+        
         document.getElementById("closeBtn").addEventListener("click", function() {
             document.getElementById("sidebar").style.left = "-250px";
         });
 
-        // Expandir e recolher o submenu de "Cadastros"
+        
         document.getElementById("cadastrosBtn").addEventListener("click", function() {
             const submenu = document.getElementById("cadastrosSubmenu");
             submenu.style.display = submenu.style.display === "block" ? "none" : "block";
         });
 
-        // Expandir e recolher o submenu de "Movimentações"
+        
         document.getElementById("movimentacoesBtn").addEventListener("click", function() {
             const submenu = document.getElementById("movimentacoesSubmenu");
             submenu.style.display = submenu.style.display === "block" ? "none" : "block";
         });
 
-        // Expandir e recolher o submenu de "Relatórios"
+        
         document.getElementById("relatoriosBtn").addEventListener("click", function() {
             const submenu = document.getElementById("relatoriosSubmenu");
             submenu.style.display = submenu.style.display === "block" ? "none" : "block";
@@ -194,15 +194,19 @@
 
         document.getElementById("menuBtn").addEventListener("click", function() {
     document.getElementById("sidebar").style.left = "0";
-    document.getElementById("menuBtn").style.opacity = "0"; // Esconde o botão
+    document.getElementById("menuBtn").style.opacity = "0"; 
 });
 
 document.getElementById("closeBtn").addEventListener("click", function() {
     document.getElementById("sidebar").style.left = "-250px";
     setTimeout(() => {
-        document.getElementById("menuBtn").style.opacity = "1"; // Mostra o botão novamente
-    }, 300); // Tempo igual ao da transição do menu
+        document.getElementById("menuBtn").style.opacity = "1"; 
+    }, 300); 
 });
+
+    </script>
+</body>
+</html>
 
     </script>
 </body>
@@ -241,7 +245,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
         h2 {
             text-align: center;
-            color: #007BFF;
+            color: #333;
             margin-bottom: 20px;
         }
 
